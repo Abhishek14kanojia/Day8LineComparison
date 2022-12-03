@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class LineComparison {
+	float line1;
+	float line2;
 	public void lineComparison() {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Enter the X & Y Co-ordinates for First Point of line 1: ");
@@ -27,20 +29,36 @@ public class LineComparison {
 			float line2 = (float) Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
 			System.out.println("Length of Second line is : " + line2);
 		
-			float compare = Float.compare(line1, line2);
-			
-			if(compare < 0) {
-				System.out.println("First line is smaller then second line");
-			}else if (compare > 0) {
-				System.out.println("First line is greater than second line");
-			}else {
-				System.out.println("First & second both lines are equal");
-			}
+	}
+	
+	public void Equal() {
+	System.out.println("Result of Equal method : ");
+		if(Objects.equals(line1, line2)) {
+			System.out.println("First & second both lines are equal");
+		}else {
+			System.out.println("Both lines are not equal");
+		}
+	}
+	
+	public void Compare() {
+		System.out.println("Result of Compare Method : ");
+		
+		float compare = Float.compare(line2, line1);
+		if(compare < 0) {
+			System.out.println("First line is smaller than second line");
+		}else if(compare > 0) {
+			System.out.println("First line is greater than second line");
+		}else {
+			System.out.println("Both lines are equals");
+		}
+	
 	}
 			public static void main(String[] args) {
 
 				LineComparison lc = new LineComparison();
 				lc.lineComparison();
+				lc.Equal();
+				lc.Compare();
 	}
 
 }
