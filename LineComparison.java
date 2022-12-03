@@ -26,12 +26,15 @@ public class LineComparison {
 			System.out.println("Length of first line is : " + line1);
 			float line2 = (float) Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
 			System.out.println("Length of Second line is : " + line2);
+		
+			float compare = Float.compare(line1, line2);
 			
-			
-			if(Objects.equals(line1, line2)) {
-				System.out.println("first & second Line both are equal ");
+			if(compare < 0) {
+				System.out.println("First line is smaller then second line");
+			}else if (compare > 0) {
+				System.out.println("First line is greater than second line");
 			}else {
-				System.out.println("Lines are not Equal");
+				System.out.println("First & second both lines are equal");
 			}
 	}
 			public static void main(String[] args) {
